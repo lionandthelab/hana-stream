@@ -1,4 +1,4 @@
-const default {
+export const default {
   apiKey: "",
   authDomain: "",
   databaseURL: "",

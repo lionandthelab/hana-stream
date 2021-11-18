@@ -37,3 +37,4 @@ store-flag.d.ts
 firebaseConfig.js
 *.log
 .firebaserc
+yarn.lock
