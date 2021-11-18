@@ -31,3 +31,9 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
+store-flag.d.ts
+
+#firebase
+firebaseConfig.js
+*.log
+.firebaserc
