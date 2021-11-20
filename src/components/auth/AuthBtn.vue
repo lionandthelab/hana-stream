@@ -24,9 +24,13 @@ onAuthStateChanged(auth, (user) => {
 });
 </script>
 <template>
-  <q-btn v-if="firebaseUser" round color="info">
-    <q-avatar size="32px">
-      <img :src="firebaseUser.photoURL || ''" />
+  <q-btn v-if="firebaseUser" round color="primary">
+    <q-avatar size="26px" padding="xs">
+      <img
+        :src="
+          firebaseUser.photoURL || 'https://cdn.quasar.dev/img/boy-avatar.png'
+        "
+      />
       <q-menu>
         <q-card>
           <q-list>
@@ -64,7 +68,7 @@ onAuthStateChanged(auth, (user) => {
       </q-menu>
     </q-avatar>
   </q-btn>
-  <q-btn v-else @click="signInWithPopup(auth, provider)" round color="info">
-    <q-avatar icon="mdi-login" size="32px" />
+  <q-btn v-else @click="signInWithPopup(auth, provider)" round color="primary">
+    <q-avatar icon="mdi-login" size="26px" />
   </q-btn>
 </template>
