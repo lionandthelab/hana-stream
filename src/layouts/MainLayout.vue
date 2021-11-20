@@ -1,5 +1,51 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+import { fabYoutube } from '@quasar/extras/fontawesome-v5';
 import AuthBtn from 'components/auth/AuthBtn.vue';
+
+const leftDrawerOpen = ref(false);
+const search = ref('');
+function toggleLeftDrawer() {
+  leftDrawerOpen.value = !leftDrawerOpen.value;
+}
+const links1 = [
+  { icon: 'home', text: 'Home' },
+  { icon: 'whatshot', text: 'Trending' },
+  { icon: 'subscriptions', text: 'Subscriptions' },
+];
+const links2 = [
+  { icon: 'folder', text: 'Library' },
+  { icon: 'restore', text: 'History' },
+  { icon: 'watch_later', text: 'Watch later' },
+  { icon: 'thumb_up_alt', text: 'Liked videos' },
+];
+const links3 = [
+  { icon: fabYoutube, text: 'YouTube Premium' },
+  { icon: 'local_movies', text: 'Movies & Shows' },
+  { icon: 'videogame_asset', text: 'Gaming' },
+  { icon: 'live_tv', text: 'Live' },
+];
+const links4 = [
+  { icon: 'settings', text: 'Settings' },
+  { icon: 'flag', text: 'Report history' },
+  { icon: 'help', text: 'Help' },
+  { icon: 'feedback', text: 'Send feedback' },
+];
+const buttons1 = [
+  { text: 'About' },
+  { text: 'Press' },
+  { text: 'Copyright' },
+  { text: 'Contact us' },
+  { text: 'Creators' },
+  { text: 'Advertise' },
+  { text: 'Developers' },
+];
+const buttons2 = [
+  { text: 'Terms' },
+  { text: 'Privacy' },
+  { text: 'Policy & Safety' },
+  { text: 'Test new features' },
+];
 </script>
 <template>
   <q-layout view="lHh Lpr lFf">
@@ -173,3 +219,23 @@ import AuthBtn from 'components/auth/AuthBtn.vue';
     </q-page-container>
   </q-layout>
 </template>
+<style lang="sass">
+.YL
+  &__toolbar-input-container
+    min-width: 100px
+    width: 55%
+  &__toolbar-input-btn
+    border-radius: 0
+    border-style: solid
+    border-width: 1px 1px 1px 0
+    border-color: rgba(0,0,0,.24)
+    max-width: 60px
+    width: 100%
+  &__drawer-footer-link
+    color: inherit
+    text-decoration: none
+    font-weight: 500
+    font-size: .75rem
+    &:hover
+      color: #000
+</style>
