@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { fabYoutube } from '@quasar/extras/fontawesome-v5';
+import { fasVideo } from '@quasar/extras/fontawesome-v5';
 import AuthBtn from 'components/auth/AuthBtn.vue';
 
 const leftDrawerOpen = ref(false);
@@ -20,7 +20,7 @@ const links2 = [
   { icon: 'thumb_up_alt', text: 'Liked videos' },
 ];
 const links3 = [
-  { icon: fabYoutube, text: 'YouTube Premium' },
+  { icon: fasVideo, text: 'YouTube Premium' },
   { icon: 'local_movies', text: 'Movies & Shows' },
   { icon: 'videogame_asset', text: 'Gaming' },
   { icon: 'live_tv', text: 'Live' },
@@ -62,7 +62,14 @@ const buttons2 = [
 
         <router-link to="/" style="text-decoration: none; color: inherit">
           <q-btn flat no-caps no-wrap class="q-ml-xs" v-if="$q.screen.gt.xs" #>
-            <q-icon :name="fabYoutube" color="red" size="28px" />
+            <q-avatar>
+              <q-img
+                fit="scale-down"
+                src="../assets/hana-stream-logo-grey.png"
+                spinner-color="white"
+                style="max-width: 30px; height: 24px"
+              />
+            </q-avatar>
             <q-toolbar-title shrink class="text-weight-bold">
               HANA STREAM
             </q-toolbar-title>
