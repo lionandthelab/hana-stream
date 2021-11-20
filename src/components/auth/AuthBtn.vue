@@ -1,19 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import {} from 'vue';
 import { auth } from 'boot/firebase';
-import {
-  signInWithPopup,
-  GoogleAuthProvider,
-  onAuthStateChanged,
-  User,
-  signOut,
-} from 'firebase/auth';
+import { signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth';
+import { firebaseUser, useAuth } from 'src/composables/useAuth';
+
+useAuth();
 
 const provider = new GoogleAuthProvider();
-const firebaseUser = ref<User | null>(null);
-onAuthStateChanged(auth, (user) => {
-  firebaseUser.value = user;
-});
 </script>
 <template>
   <q-btn v-if="firebaseUser" round color="primary">
