@@ -3,7 +3,7 @@ export interface Stream {
   title: string;
   url: string;
   tag: string;
-  preacher: string;
+  messenger: string;
   thumbnailUrl: string;
   date: Date;
 }

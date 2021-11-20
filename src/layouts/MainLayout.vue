@@ -9,8 +9,8 @@ function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
 const links1 = [
-  { icon: 'home', text: 'Home' },
-  { icon: 'whatshot', text: 'Trending' },
+  { icon: 'home', text: 'Home', url: '/' },
+  { icon: 'whatshot', text: 'Trending', url: 'admin' },
   { icon: 'subscriptions', text: 'Subscriptions' },
 ];
 const links2 = [
@@ -146,7 +146,13 @@ const buttons2 = [
       :width="240"
     >
       <q-scroll-area class="fit">
-        <q-item v-for="link in links1" :key="link.text" v-ripple clickable>
+        <q-item
+          v-for="link in links1"
+          :key="link.text"
+          v-ripple
+          clickable
+          :to="link.url"
+        >
           <q-item-section avatar>
             <q-icon color="grey" :name="link.icon" />
           </q-item-section>
