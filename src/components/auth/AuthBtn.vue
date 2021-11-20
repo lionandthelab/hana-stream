@@ -1,22 +1,14 @@
 <script setup lang="ts">
-import { initializeApp } from 'firebase/app';
 import { ref } from 'vue';
-import firebaseConfig from '../../../firebaseConfig';
+import { auth } from 'boot/firebase';
 import {
-  getAuth,
   signInWithPopup,
-  connectAuthEmulator,
   GoogleAuthProvider,
   onAuthStateChanged,
   User,
   signOut,
 } from 'firebase/auth';
 
-initializeApp(firebaseConfig);
-
-const auth = getAuth();
-connectAuthEmulator(auth, 'http://localhost:9099');
-auth.useDeviceLanguage();
 const provider = new GoogleAuthProvider();
 const firebaseUser = ref<User | null>(null);
 onAuthStateChanged(auth, (user) => {
