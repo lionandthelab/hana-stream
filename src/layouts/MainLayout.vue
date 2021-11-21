@@ -10,8 +10,8 @@ function toggleLeftDrawer() {
 }
 const links1 = [
   { icon: 'home', text: 'Home', url: '/' },
-  { icon: 'whatshot', text: 'Trending', url: 'admin' },
-  { icon: 'subscriptions', text: 'Subscriptions', url: 'list' },
+  { icon: 'person', text: 'Admin (temporal)', url: 'admin' },
+  { icon: 'subscriptions', text: 'Stream Sample', url: 'list' },
 ];
 const links2 = [
   { icon: 'folder', text: 'Library' },

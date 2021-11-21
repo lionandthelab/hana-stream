@@ -7,13 +7,24 @@ import {
   query,
   QueryDocumentSnapshot,
   DocumentData,
+  where,
 } from 'firebase/firestore';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, defineProps, computed } from 'vue';
+
+const props = defineProps<{
+  tag: string;
+}>();
 
 const items = ref<QueryDocumentSnapshot<DocumentData>[]>([]);
 
 const getData = async () => {
-  const q = query(collection(db, 'streams'));
+  let q;
+
+  if (props.tag) {
+    q = query(collection(db, 'streams'), where('tag', '==', props.tag));
+  } else {
+    q = query(collection(db, 'streams'));
+  }
 
   const querySnapshot = await getDocs(q);
   items.value = querySnapshot.docs;
