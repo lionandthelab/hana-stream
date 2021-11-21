@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import PostStream from 'src/components/PostStream.vue';
+import StreamWrite from 'src/components/StreamWrite.vue';
 </script>
 <template>
   <q-page padding>
-    <PostStream />
+    <StreamWrite />
   </q-page>
 </template>

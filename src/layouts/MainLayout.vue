@@ -11,7 +11,7 @@ function toggleLeftDrawer() {
 const links1 = [
   { icon: 'home', text: 'Home', url: '/' },
   { icon: 'whatshot', text: 'Trending', url: 'admin' },
-  { icon: 'subscriptions', text: 'Subscriptions' },
+  { icon: 'subscriptions', text: 'Subscriptions', url: 'list' },
 ];
 const links2 = [
   { icon: 'folder', text: 'Library' },
