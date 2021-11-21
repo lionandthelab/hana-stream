@@ -52,9 +52,7 @@ const existenceCheckRule = (val: string) =>
   (val && val.length > 0) || '입력란이 비었습니다';
 </script>
 <template>
-  <q-card
-    v-if="isSigned && firebaseUser?.email === 'raccoon.olive.829@example.com'"
-  >
+  <q-card v-if="isSigned && firebaseUser?.email === 'lionandthelab@gmail.com'">
     관리자 페이지
     <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
       <q-card-section>
