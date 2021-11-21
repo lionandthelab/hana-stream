@@ -3,9 +3,9 @@ export interface Stream {
   title: string;
   url: string;
   tag: string;
-  messenger: string;
+  preacher: string;
   thumbnailUrl: string;
-  date: Date;
+  date: string;
 }
 
 export interface Meta {

@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed, ref, toRef, Ref } from 'vue';
-import { Stream } from './models';
+import { Stream, Meta } from './models';
 
 function useClickCount() {
   const clickCount = ref(0);

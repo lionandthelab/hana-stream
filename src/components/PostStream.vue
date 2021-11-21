@@ -17,29 +17,25 @@ const clear = () => {
   date.value = new Date();
 };
 const onSubmit = async () => {
-  try {
-    // const docRef = await addDoc(collection(db, 'streams'), {
-    //   title: title.value,
-    //   url: `https://www.youtube.com/embed/${vid.value}?rel=0`,
-    //   tag: kind.value,
-    //   messenger: messenger.value,
-    //   thumbnailUrl: `https://img.youtube.com/vi/${vid.value}/mqdefault.jpg`,
-    //   date: date.value,
-    // });
-    // console.log('Document written with ID: ', docRef.id);
+  // const docRef = await addDoc(collection(db, 'streams'), {
+  //   title: title.value,
+  //   url: `https://www.youtube.com/embed/${vid.value}?rel=0`,
+  //   tag: kind.value,
+  //   messenger: messenger.value,
+  //   thumbnailUrl: `https://img.youtube.com/vi/${vid.value}/mqdefault.jpg`,
+  //   date: date.value,
+  // });
+  // console.log('Document written with ID: ', docRef.id);
 
-    await setDoc(doc(db, 'streams', vid.value), {
-      title: title.value,
-      url: `https://www.youtube.com/embed/${vid.value}?rel=0`,
-      tag: kind.value,
-      messenger: messenger.value,
-      thumbnailUrl: `https://img.youtube.com/vi/${vid.value}/mqdefault.jpg`,
-      date: date.value,
-    });
-    clear();
-  } catch (e) {
-    console.error('Error adding document: ', e);
-  }
+  await setDoc(doc(db, 'streams', vid.value), {
+    title: title.value,
+    url: `https://www.youtube.com/embed/${vid.value}?rel=0`,
+    tag: kind.value,
+    messenger: messenger.value,
+    thumbnailUrl: `https://img.youtube.com/vi/${vid.value}/mqdefault.jpg`,
+    date: date.value.toString(),
+  });
+  clear();
 };
 const onReset = () => {
   clear();
