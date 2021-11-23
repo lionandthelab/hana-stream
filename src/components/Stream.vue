@@ -1,12 +1,22 @@
 <template>
   <div>
     <p>{{ title }}</p>
-    <ul>
-      <li v-for="stream in streams" :key="stream.id" @click="increment">
-        {{ stream.id }} - {{ stream.title }} {{ stream.url }} -
-        {{ stream.thumbnailUrl }}
-      </li>
-    </ul>
+    <div class="row">
+      <div class="col-12 col-sm-4 col-md-3 q-pa-md" v-for="stream in streams" :key="stream.id" @click="increment">
+            <q-card class="my-card">
+            <q-img
+              :src="stream.thumbnailUrl"
+              :ratio="16/9"
+            />
+
+          <q-card-section>
+            <div class="text-h6">{{stream.title}}</div>
+            <div class="text-subtitle2">{{stream.tag}}</div>
+            <div class="text-subtitle2">{{stream.date}}</div>
+          </q-card-section>
+        </q-card>
+      </div>
+    </div>
     <p>Meta(props example): {{ meta.totalCount }}</p>
     <p>Clicks(local ref example): {{ clickCount }}</p>
   </div>
