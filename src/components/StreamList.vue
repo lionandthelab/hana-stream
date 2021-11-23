@@ -33,7 +33,11 @@ const getData = async () => {
 onMounted(() => getData());
 </script>
 <template>
-  <q-list>
-    <StreamListItem v-for="item in items" :key="item.id" :item="item" />
-  </q-list>
+  <div>
+    <div class="row">
+      <div class="col-12 col-sm-4 col-md-3 q-pa-md" v-for="item in items" :key="item.id">
+        <StreamListItem  :item="item" />
+      </div>
+    </div>
+  </div>
 </template>
