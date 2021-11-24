@@ -11,19 +11,19 @@ function toggleLeftDrawer() {
 const links1 = [
   { icon: 'home', text: 'Home', url: '/' },
   { icon: 'person', text: 'Admin (temporal)', url: 'admin' },
-  { icon: 'subscriptions', text: 'Stream Sample', url: 'list' },
+  { icon: 'subscriptions', text: 'Stream Sample', url: 'list/ALL' },
 ];
 const links2 = [
-  { icon: 'folder', text: 'Library' },
-  { icon: 'restore', text: 'History' },
-  { icon: 'watch_later', text: 'Watch later' },
-  { icon: 'thumb_up_alt', text: 'Liked videos' },
+  { icon: 'folder', text: '주일예배', url:'/list/SundayWorship' },
+  { icon: 'restore', text: 'UCM 예배', url:'/list/UCM' },
+  { icon: 'watch_later', text: 'HTS', url:'/list/HTS' },
+  { icon: 'thumb_up_alt', text: '금요기도회', url:'/list/Prayer' },
 ];
 const links3 = [
-  { icon: fasVideo, text: 'YouTube Premium' },
-  { icon: 'local_movies', text: 'Movies & Shows' },
-  { icon: 'videogame_asset', text: 'Gaming' },
-  { icon: 'live_tv', text: 'Live' },
+  { icon: fasVideo, text: '조이랜드 찬양예배', url:'/list/JoyWorship' },
+  { icon: 'local_movies', text: '조이코너/드림 설교', url:'/list/JoyCorner' },
+  { icon: 'videogame_asset', text: '조이트리 설교' , url:'/list/JoyTree'},
+  { icon: 'live_tv', text: '조이틴 설교', url:'JoyTeen' },
 ];
 const links4 = [
   { icon: 'settings', text: 'Settings' },
@@ -163,7 +163,11 @@ const buttons2 = [
 
         <q-separator class="q-my-md" />
 
-        <q-item v-for="link in links2" :key="link.text" v-ripple clickable>
+        <q-item v-for="link in links2" 
+        :key="link.text" 
+        v-ripple 
+        clickable 
+        :to="link.url" >
           <q-item-section avatar>
             <q-icon color="grey" :name="link.icon" />
           </q-item-section>
@@ -178,7 +182,11 @@ const buttons2 = [
           More from Youtube
         </q-item-label>
 
-        <q-item v-for="link in links3" :key="link.text" v-ripple clickable>
+        <q-item v-for="link in links3" 
+        :key="link.text" 
+        v-ripple 
+        clickable
+        :to="link.url">
           <q-item-section avatar>
             <q-icon color="grey" :name="link.icon" />
           </q-item-section>

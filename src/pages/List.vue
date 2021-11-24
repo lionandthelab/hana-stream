@@ -1,26 +1,28 @@
 <script setup lang="ts">
 import StreamList from 'src/components/StreamList.vue';
-
-const tagList = [
-  'UCM',
-  'JoyWorship',
-  'HTS',
-  'SundayWorship',
-  'JoyCorner',
-  'Prayer',
-  'JoyTeen',
-  'JoyTree',
-];
+import { defineProps } from 'vue'
+// const tagList = [
+//   'UCM',
+//   'JoyWorship',
+//   'HTS',
+//   'SundayWorship',
+//   'JoyCorner',
+//   'Prayer',
+//   'JoyTeen',
+//   'JoyTree',
+// ];
+const props= defineProps<{
+  id: string;
+}>();
 </script>
 <template>
   <q-page padding>
+    {{props.id}}
     <q-item>
-      ALL
-      <StreamList :tag="tag" />
-    </q-item>
-    <q-item v-for="tag in tagList" :key="tag">
-      {{ tag }}
-      <StreamList :tag="tag" />
+      <StreamList 
+      :tag="props.id" 
+      :key="props.id" 
+      />
     </q-item>
   </q-page>
 </template>

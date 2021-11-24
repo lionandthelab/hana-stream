@@ -12,9 +12,9 @@ const routes: RouteRecordRaw[] = [
     children: [{ path: '', component: () => import('pages/Admin.vue') }],
   },
   {
-    path: '/list',
+    path: '/list/:id',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/List.vue') }],
+    children: [{ path: '/list/:id', component: () => import('pages/List.vue') ,props:true, name:'list'}],
   },
   {
     path: '/:catchAll(.*)*',
