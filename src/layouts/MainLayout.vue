@@ -10,8 +10,7 @@ function toggleLeftDrawer() {
 }
 const links1 = [
   { icon: 'home', text: 'Home', url: '/' },
-  { icon: 'person', text: 'Admin (temporal)', url: 'admin' },
-  { icon: 'subscriptions', text: 'Stream Sample', url: 'list/ALL' },
+  { icon: 'person', text: 'Admin (temporal)', url: '/admin' },
 ];
 const links2 = [
   { icon: 'folder', text: '주일예배', url:'/list/SundayWorship' },
@@ -25,12 +24,12 @@ const links3 = [
   { icon: 'videogame_asset', text: '조이트리 설교' , url:'/list/JoyTree'},
   { icon: 'live_tv', text: '조이틴 설교', url:'JoyTeen' },
 ];
-const links4 = [
-  { icon: 'settings', text: 'Settings' },
-  { icon: 'flag', text: 'Report history' },
-  { icon: 'help', text: 'Help' },
-  { icon: 'feedback', text: 'Send feedback' },
-];
+// const links4 = [
+//   { icon: 'settings', text: 'Settings' },
+//   { icon: 'flag', text: 'Report history' },
+//   { icon: 'help', text: 'Help' },
+//   { icon: 'feedback', text: 'Send feedback' },
+// ];
 const buttons1 = [
   { text: 'About' },
   { text: 'Press' },
@@ -98,7 +97,7 @@ const buttons2 = [
 
         <q-space />
 
-        <div class="q-gutter-sm row items-center no-wrap">
+        <!-- <div class="q-gutter-sm row items-center no-wrap">
           <q-btn
             round
             dense
@@ -133,8 +132,8 @@ const buttons2 = [
             <q-badge color="red" text-color="white" floating> 2 </q-badge>
             <q-tooltip>Notifications</q-tooltip>
           </q-btn>
+        </div> -->
           <AuthBtn />
-        </div>
       </q-toolbar>
     </q-header>
 
@@ -179,7 +178,7 @@ const buttons2 = [
         <q-separator class="q-mt-md q-mb-xs" />
 
         <q-item-label header class="text-weight-bold text-uppercase">
-          More from Youtube
+          Joy Land
         </q-item-label>
 
         <q-item v-for="link in links3" 
@@ -195,7 +194,7 @@ const buttons2 = [
           </q-item-section>
         </q-item>
 
-        <q-separator class="q-my-md" />
+        <!-- <q-separator class="q-my-md" />
 
         <q-item v-for="link in links4" :key="link.text" v-ripple clickable>
           <q-item-section avatar>
@@ -204,7 +203,7 @@ const buttons2 = [
           <q-item-section>
             <q-item-label>{{ link.text }}</q-item-label>
           </q-item-section>
-        </q-item>
+        </q-item> -->
 
         <q-separator class="q-mt-md q-mb-lg" />
 

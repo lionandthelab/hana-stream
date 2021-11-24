@@ -19,7 +19,6 @@ const items = ref<QueryDocumentSnapshot<DocumentData>[]>([]);
 
 const getData = async () => {
   let q;
-  //console.log('[Debug] props.tag -',props.tag)
   if (props.tag) {
     q = query(collection(db, 'streams'), where('tag', '==', props.tag));
   } else {
