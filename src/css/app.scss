@@ -1,1 +1,8 @@
 // app global css in SCSS form
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none!important;
+  color: inherit;
+
+  -webkit-box-shadow: none!important;
+  box-shadow: none!important;
+}

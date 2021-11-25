@@ -9,19 +9,19 @@ const stream = computed(() => props.item.data());
 </script>
 <template>
   <div>
-    <router-link :to="'/Watch/'+ stream.tag + '&' + stream.date.split('/').join('')" >
-            <q-card class="my-card">
-            <q-img
-              :src="stream.thumbnailUrl"
-              :ratio="16/9"            
-              />
-
-          <q-card-section>
-            <div class="text-h6">{{stream.title}}</div>
-            <div class="text-subtitle2">{{stream.tag}}</div>
-            <div class="text-subtitle2">{{stream.date}}</div>
-          </q-card-section>
-        </q-card>
+    <router-link
+      :to="'/Watch/' + stream.tag + '&' + stream.date.split('/').join('')"
+    >
+      <q-card class="my-card" style="text-decoration: none">
+        <q-img :src="stream.thumbnailUrl" :ratio="16 / 9" />
+        <q-card-section>
+          <div class="text-h6">
+            {{ stream.title }}
+          </div>
+          <div class="text-subtitle2">{{ stream.tag }}</div>
+          <div class="text-subtitle2">{{ stream.date }}</div>
+        </q-card-section>
+      </q-card>
     </router-link>
   </div>
 </template>

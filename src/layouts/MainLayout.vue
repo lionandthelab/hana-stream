@@ -8,21 +8,18 @@ const search = ref('');
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
-const links1 = [
-  { icon: 'home', text: 'Home', url: '/' },
-  { icon: 'person', text: 'Admin (temporal)', url: '/admin' },
-];
+const links1 = [{ icon: 'home', text: 'Home', url: '/' }];
 const links2 = [
-  { icon: 'folder', text: '주일예배', url:'/list/SundayWorship' },
-  { icon: 'restore', text: 'UCM 예배', url:'/list/UCM' },
-  { icon: 'watch_later', text: 'HTS', url:'/list/HTS' },
-  { icon: 'thumb_up_alt', text: '금요기도회', url:'/list/Prayer' },
+  { icon: 'folder', text: '주일예배', url: '/list/SundayWorship' },
+  { icon: 'restore', text: 'UCM 예배', url: '/list/UCM' },
+  { icon: 'watch_later', text: 'HTS', url: '/list/HTS' },
+  { icon: 'thumb_up_alt', text: '금요기도회', url: '/list/Prayer' },
 ];
 const links3 = [
-  { icon: fasVideo, text: '조이랜드 찬양예배', url:'/list/JoyWorship' },
-  { icon: 'local_movies', text: '조이코너/드림 설교', url:'/list/JoyCorner' },
-  { icon: 'videogame_asset', text: '조이트리 설교' , url:'/list/JoyTree'},
-  { icon: 'live_tv', text: '조이틴 설교', url:'JoyTeen' },
+  { icon: fasVideo, text: '조이랜드 찬양예배', url: '/list/JoyWorship' },
+  { icon: 'local_movies', text: '조이코너/드림 설교', url: '/list/JoyCorner' },
+  { icon: 'videogame_asset', text: '조이트리 설교', url: '/list/JoyTree' },
+  { icon: 'live_tv', text: '조이틴 설교', url: 'JoyTeen' },
 ];
 // const links4 = [
 //   { icon: 'settings', text: 'Settings' },
@@ -133,7 +130,7 @@ const buttons2 = [
             <q-tooltip>Notifications</q-tooltip>
           </q-btn>
         </div> -->
-          <AuthBtn />
+        <AuthBtn />
       </q-toolbar>
     </q-header>
 
@@ -162,11 +159,13 @@ const buttons2 = [
 
         <q-separator class="q-my-md" />
 
-        <q-item v-for="link in links2" 
-        :key="link.text" 
-        v-ripple 
-        clickable 
-        :to="link.url" >
+        <q-item
+          v-for="link in links2"
+          :key="link.text"
+          v-ripple
+          clickable
+          :to="link.url"
+        >
           <q-item-section avatar>
             <q-icon color="grey" :name="link.icon" />
           </q-item-section>
@@ -181,11 +180,13 @@ const buttons2 = [
           Joy Land
         </q-item-label>
 
-        <q-item v-for="link in links3" 
-        :key="link.text" 
-        v-ripple 
-        clickable
-        :to="link.url">
+        <q-item
+          v-for="link in links3"
+          :key="link.text"
+          v-ripple
+          clickable
+          :to="link.url"
+        >
           <q-item-section avatar>
             <q-icon color="grey" :name="link.icon" />
           </q-item-section>

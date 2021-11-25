@@ -53,7 +53,6 @@ const existenceCheckRule = (val: string) =>
 </script>
 <template>
   <q-card v-if="isSigned && firebaseUser?.email === 'lionandthelab@gmail.com'">
-    관리자 페이지
     <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
       <q-card-section>
         <q-input

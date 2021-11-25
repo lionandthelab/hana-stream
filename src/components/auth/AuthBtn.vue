@@ -42,6 +42,13 @@ const provider = new GoogleAuthProvider();
           </q-list>
           <q-card-actions align="right">
             <q-btn
+              icon="mdi-upload"
+              label="업로드"
+              flat
+              color="primary"
+              :to="admin"
+            ></q-btn>
+            <q-btn
               icon="mdi-logout"
               label="로그아웃"
               flat

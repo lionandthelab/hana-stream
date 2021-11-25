@@ -5,7 +5,6 @@
 </template>
 
 <script lang="ts">
-import { Stream, Meta } from 'components/models';
 //import StreamComponent from 'components/Stream.vue';
 import StreamList from 'src/components/StreamList.vue';
 import { defineComponent } from 'vue';
