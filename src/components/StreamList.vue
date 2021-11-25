@@ -27,20 +27,25 @@ const getData = async () => {
 
   const querySnapshot = await getDocs(q);
   items.value = querySnapshot.docs;
-  //console.log('[Debug]',items.value[0].data())
+
+  // sort by lastest order
+  items.value = items.value.sort(
+    (a, b) => (a.data().date < b.data().date && 1) || -1
+  );
+  console.log('[Debug]', items.value[0].data());
 };
 
 onMounted(() => getData());
 </script>
 <template>
-  <div style="width:100%">
+  <div style="width: 100%">
     <div class="row">
       <div
-       class="col-12 col-sm-4 col-md-3 q-pa-md"
-       v-for="item in items" 
-       :key="item.id"
-       >
-        <StreamListItem  :item="item" />
+        class="col-12 col-sm-4 col-md-3 q-pa-md"
+        v-for="item in items"
+        :key="item.id"
+      >
+        <StreamListItem :item="item" />
       </div>
     </div>
   </div>

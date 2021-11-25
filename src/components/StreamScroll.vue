@@ -7,7 +7,6 @@ import {
   query,
   QueryDocumentSnapshot,
   DocumentData,
-  where,
 } from 'firebase/firestore';
 import { onMounted, ref } from 'vue';
 
@@ -24,23 +23,32 @@ onMounted(() => getData());
 </script>
 <template>
   <div class="q-pa-md">
-    <q-layout  view="lHh Lpr lFf" container style="min-height: 500px" class="shadow-2 rounded-borders">
-        <q-header elevated >
-          <q-toolbar>
-            <q-avatar>
-              <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
-            </q-avatar>
-            <q-toolbar-title >
-              <strong>Play List</strong>
-            </q-toolbar-title>
-          </q-toolbar>
-        </q-header>
+    <q-layout
+      view="lHh Lpr lFf"
+      container
+      style="min-height: 500px"
+      class="shadow-2 rounded-borders"
+    >
+      <q-header elevated>
+        <q-toolbar>
+          <q-avatar>
+            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
+          </q-avatar>
+          <q-toolbar-title>
+            <strong>Play List</strong>
+          </q-toolbar-title>
+        </q-toolbar>
+      </q-header>
       <q-page-container>
         <q-page padding>
           <p v-for="(item, key) in items" :key="key">
-            <StreamListItem  :item="item" />
+            <StreamListItem :item="item" />
           </p>
-          <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
+          <q-page-scroller
+            position="bottom-right"
+            :scroll-offset="150"
+            :offset="[18, 18]"
+          >
             <q-btn fab icon="keyboard_arrow_up" color="accent" />
           </q-page-scroller>
         </q-page>
