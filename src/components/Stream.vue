@@ -8,6 +8,7 @@
               :src="stream.thumbnailUrl"
               :ratio="16/9"
             />
+            
 
           <q-card-section>
             <div class="text-h6">{{stream.title}}</div>

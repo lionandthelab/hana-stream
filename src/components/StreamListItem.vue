@@ -5,11 +5,11 @@ import { QueryDocumentSnapshot, DocumentData } from 'firebase/firestore';
 const props = defineProps<{
   item: QueryDocumentSnapshot<DocumentData>;
 }>();
-
 const stream = computed(() => props.item.data());
 </script>
 <template>
   <div>
+    <router-link :to="'/Watch/'+ stream.tag + '&' + stream.date.split('/').join('')" >
             <q-card class="my-card">
             <q-img
               :src="stream.thumbnailUrl"
@@ -22,5 +22,6 @@ const stream = computed(() => props.item.data());
             <div class="text-subtitle2">{{stream.date}}</div>
           </q-card-section>
         </q-card>
+    </router-link>
   </div>
 </template>
