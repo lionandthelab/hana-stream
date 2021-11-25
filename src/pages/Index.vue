@@ -1,22 +1,29 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <stream-component
+    <DatePicker />
+    <!-- <stream-component
       title="Stream component"
       active
       :streams="streams"
       :meta="meta"
-    ></stream-component>
+    ></stream-component> -->
+      <StreamList 
+      :tag="ALL" 
+      />
+
   </q-page>
 </template>
 
 <script lang="ts">
 import { Stream, Meta } from 'components/models';
-import StreamComponent from 'components/Stream.vue';
+//import StreamComponent from 'components/Stream.vue';
+import DatePicker from 'components/DatePicker.vue';
+import StreamList from 'src/components/StreamList.vue';
 import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'PageIndex',
-  components: { StreamComponent },
+  components: {  DatePicker, StreamList},
   setup() {
     const streams = ref<Stream[]>([
       {
