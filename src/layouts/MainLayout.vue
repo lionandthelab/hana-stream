@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { fasVideo } from '@quasar/extras/fontawesome-v5';
+import {
+  fasVideo,
+  fasGrinStars,
+  fasGuitar,
+  fasBookmark,
+} from '@quasar/extras/fontawesome-v5';
 import AuthBtn from 'components/auth/AuthBtn.vue';
 
 const leftDrawerOpen = ref(false);
@@ -8,18 +13,18 @@ const search = ref('');
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
-const links1 = [{ icon: 'home', text: 'Home', url: '/' }];
+const links1 = [{ icon: 'home', text: '홈', url: '/' }];
 const links2 = [
-  { icon: 'folder', text: '주일예배', url: '/list/SundayWorship' },
-  { icon: 'restore', text: 'UCM 예배', url: '/list/UCM' },
-  { icon: 'watch_later', text: 'HTS', url: '/list/HTS' },
-  { icon: 'thumb_up_alt', text: '금요기도회', url: '/list/Prayer' },
+  { icon: fasVideo, text: '주일 예배', url: '/list/SundayWorship' },
+  { icon: 'local_movies', text: 'UCM 예배', url: '/list/UCM' },
+  { icon: 'watch_later', text: 'HTS 성경공부', url: '/list/HTS' },
+  { icon: fasGuitar, text: '금요 기도회', url: '/list/Prayer' },
 ];
 const links3 = [
-  { icon: fasVideo, text: '조이랜드 찬양예배', url: '/list/JoyWorship' },
+  { icon: fasGuitar, text: '조이랜드 찬양예배', url: '/list/JoyWorship' },
   { icon: 'local_movies', text: '조이코너/드림 설교', url: '/list/JoyCorner' },
-  { icon: 'videogame_asset', text: '조이트리 설교', url: '/list/JoyTree' },
-  { icon: 'live_tv', text: '조이틴 설교', url: 'JoyTeen' },
+  { icon: fasBookmark, text: '조이트리 설교', url: '/list/JoyTree' },
+  { icon: fasGrinStars, text: '조이틴 설교', url: '/list/JoyTeen' },
 ];
 // const links4 = [
 //   { icon: 'settings', text: 'Settings' },
@@ -27,21 +32,21 @@ const links3 = [
 //   { icon: 'help', text: 'Help' },
 //   { icon: 'feedback', text: 'Send feedback' },
 // ];
-const buttons1 = [
-  { text: 'About' },
-  { text: 'Press' },
-  { text: 'Copyright' },
-  { text: 'Contact us' },
-  { text: 'Creators' },
-  { text: 'Advertise' },
-  { text: 'Developers' },
-];
-const buttons2 = [
-  { text: 'Terms' },
-  { text: 'Privacy' },
-  { text: 'Policy & Safety' },
-  { text: 'Test new features' },
-];
+// const buttons1 = [
+//   { text: 'About' },
+//   { text: 'Press' },
+//   { text: 'Copyright' },
+//   { text: 'Contact us' },
+//   { text: 'Creators' },
+//   { text: 'Advertise' },
+//   { text: 'Developers' },
+// ];
+// const buttons2 = [
+//   { text: 'Terms' },
+//   { text: 'Privacy' },
+//   { text: 'Policy & Safety' },
+//   { text: 'Test new features' },
+// ];
 </script>
 <template>
   <q-layout view="lHh Lpr lFf">
@@ -67,7 +72,7 @@ const buttons2 = [
               />
             </q-avatar>
             <q-toolbar-title shrink class="text-weight-bold">
-              HANA STREAM
+              하나스트림
             </q-toolbar-title>
           </q-btn>
         </router-link>
@@ -157,7 +162,14 @@ const buttons2 = [
           </q-item-section>
         </q-item>
 
-        <q-separator class="q-my-md" />
+        <q-separator class="q-mt-md q-mb-xs" />
+
+        <q-item-label
+          header
+          class="text-weight-bold text-uppercase text-justify"
+        >
+          <q-icon name="mdi-tree-outline" /> 성인 예배
+        </q-item-label>
 
         <q-item
           v-for="link in links2"
@@ -176,8 +188,11 @@ const buttons2 = [
 
         <q-separator class="q-mt-md q-mb-xs" />
 
-        <q-item-label header class="text-weight-bold text-uppercase">
-          Joy Land
+        <q-item-label
+          header
+          class="text-weight-bold text-uppercase text-justify"
+        >
+          <q-icon name="mdi-tree-outline" /> 어린이 예배
         </q-item-label>
 
         <q-item
