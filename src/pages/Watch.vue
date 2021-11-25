@@ -49,8 +49,8 @@ onMounted(() => getData());
   <div>
     <div v-for="(item, key) in items" :key="key">
       <div class="row">
-        <StreamVideo class="col-12 col-md-8" :item="item" />
-        <StreamScroll class="col-12 col-md-4" />
+        <StreamVideo class="col-12 col-xs-12 col-md-7" :item="item" />
+        <StreamScroll class="col-12 col-xs-8 col-md-4" />
       </div>
     </div>
   </div>

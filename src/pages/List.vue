@@ -16,7 +16,7 @@ const props = defineProps<{
 }>();
 </script>
 <template>
-  <q-page padding>
+  <q-page>
     <!-- {{ tagList[props.tag] }} -->
     <q-item>
       <StreamList :tag="props.tag" :key="props.tag" />

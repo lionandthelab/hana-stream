@@ -87,6 +87,7 @@ const links3 = [
             v-model="search"
             placeholder="Search"
             class="bg-white col"
+            disabled
           />
           <q-btn
             class="YL__toolbar-input-btn"
@@ -94,7 +95,9 @@ const links3 = [
             text-color="grey-8"
             icon="search"
             unelevated
+            disabled
           />
+          <q-tooltip> 아직 지원되지 않습니다 </q-tooltip>
         </div>
 
         <q-space />

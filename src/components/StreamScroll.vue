@@ -22,7 +22,7 @@ const getData = async () => {
 onMounted(() => getData());
 </script>
 <template>
-  <div class="q-pa-md">
+  <div class="q-mt-md q-mr-md">
     <q-layout
       view="lHh Lpr lFf"
       container
@@ -31,11 +31,11 @@ onMounted(() => getData());
     >
       <q-header elevated>
         <q-toolbar>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
-          </q-avatar>
           <q-toolbar-title>
-            <strong>Play List</strong>
+            <q-avatar>
+              <q-icon name="bookmark"></q-icon>
+            </q-avatar>
+            재생목록
           </q-toolbar-title>
         </q-toolbar>
       </q-header>

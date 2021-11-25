@@ -12,7 +12,7 @@ const stream = computed(() => props.item.data());
     <router-link
       :to="'/Watch/' + stream.tag + '&' + stream.date.split('/').join('')"
     >
-      <q-card class="my-card" style="text-decoration: none">
+      <q-card class="my-card">
         <q-img :src="stream.thumbnailUrl" :ratio="16 / 9" />
         <q-card-section>
           <div class="text-h6">
