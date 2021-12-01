@@ -8,6 +8,18 @@ export interface Stream {
   date: string;
 }
 
+export interface YouTube{
+  kind: string,
+  etag: string,
+  nextPageToken: string,
+  prevPageToken: string,
+  pageInfo: {
+    totalResults: number,
+    resultsPerPage: number
+  },
+  items:[]
+}
+
 export interface Meta {
   totalCount: number;
 }

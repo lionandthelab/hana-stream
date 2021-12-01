@@ -18,16 +18,18 @@ const props = defineProps<{
 const items = ref<QueryDocumentSnapshot<DocumentData>[]>([]);
 const tab = ref('');
 
+
 const getData = async () => {
   let q;
   q = query(collection(db, 'streams'), where('date', '==', props.date));
   const querySnapshot = await getDocs(q);
   items.value = querySnapshot.docs;
-  for(var i = 0 ; i < items.value.length ; i++)
+  for(var i = 0 ; i < items.value.length ; i++){
     console.log('[Debug]',items.value[i].data())
+    }
 };
-
 onMounted(() => getData());
+// const firstItem = computed(() => items.value);
 
 </script>
 <template>
@@ -37,7 +39,6 @@ onMounted(() => getData());
           <q-tab-panel v-for="(item,key) in items" 
        :key="key" :name="item.data().tag">
             <StreamListItem  :item="item" />
-            
           </q-tab-panel>
         </q-tab-panels>
 
@@ -54,5 +55,6 @@ onMounted(() => getData());
        :key="key" :name="item.data().tag" :label="item.data().tag" />
         </q-tabs>
       </q-card>
+      <!-- <div>{{firstItem[0].data().tag}}</div> -->
   </div>
 </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref, computed,onMounted } from 'vue';
+import { defineProps, ref, onMounted } from 'vue';
 import {
   collection,
   getDocs,

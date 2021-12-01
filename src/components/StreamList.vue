@@ -27,7 +27,7 @@ const getData = async () => {
 
   const querySnapshot = await getDocs(q);
   items.value = querySnapshot.docs;
-  //console.log('[Debug]',items.value[0].data())
+  console.log('[Debug list]',items.value[0].data())
 };
 
 onMounted(() => getData());

@@ -7,7 +7,6 @@ import {
   query,
   QueryDocumentSnapshot,
   DocumentData,
-  where,
 } from 'firebase/firestore';
 import { onMounted, ref } from 'vue';
 
